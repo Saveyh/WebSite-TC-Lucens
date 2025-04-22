@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-nav {
+header {
   display: flex;
   position: fixed;
   top: 0;
@@ -26,54 +26,118 @@ nav {
   z-index: 9999999;
   font-size: 1.3rem;
   font-weight: 600;
+  letter-spacing: 3px;
 }
 
-li {
-  text-decoration: none;
+#logomiddle {
+  position: absolute;
+  height: 100px;
+  width: auto;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #ping {
-  height: 30px;
-  width: auto;
-}
-
-#logobox {
-  margin-right: 4%;
-}
-
-#logo {
-  width: 50px;
-  height: 50px;
+  height: 42px;
+  width: 42px;
   transition: transform 0.3s ease;
-}
-
-#logo:hover {
-  animation: rotateAndScale 5s linear infinite;
-}
-
-@keyframes rotateAndScale {
-  from {
-    transform: scale(1.4) rotate(0deg);
-  }
-  to {
-    transform: scale(1.4) rotate(360deg);
-  }
 }
 
 a {
   text-decoration: none;
-}
-
-a:visited {
   color: black;
 }
 
 ul {
-  display: flex;
-  gap: 20px;
   list-style: none;
-  padding: 0;
-  margin: 0;
+}
+
+.gauche,
+.droite {
+  display: flex;
+}
+
+header ul li a {
+  padding: 25px;
+}
+
+.droite a {
+  display: flex;
+  align-items: top;
+  gap: 8px;
+}
+
+.droite {
+  margin-right: 2%;
+}
+
+.droite li:nth-child(1) {
+  margin-right: 20px;
+}
+
+#reserver {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#reserverbutton {
+  box-sizing: border-box;
+  border: black solid 1px;
+  border-radius: 45px;
+  transition: background-color 0.5s ease;
+  padding: 15px 25px;
+}
+
+#reserverbutton:hover {
+  background-color: #c3d017;
+}
+
+.gauche li a {
+  position: relative;
+  padding: 25px;
+  display: inline-block;
+}
+
+.gauche li a::before {
+  content: "_";
+  position: absolute;
+  left: 12px;
+  top: 30px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gauche li a:hover::before {
+  opacity: 1;
+}
+
+.gauche li a:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+#loc-link img {
+  transition: transform 0.3s ease;
+}
+
+#loc-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+#loc-link span {
+  transition: transform 0.3s ease;
+}
+
+#loc-link:hover img {
+  transform: rotate(-90deg);
+}
+
+#loc-link:hover span {
+  transform: translateX(10px);
 }
 
 /* ------------------------------------------------------------------- */
