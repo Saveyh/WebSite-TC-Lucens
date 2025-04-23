@@ -1,15 +1,15 @@
 @import "style.css";
 
-body * {
+main * {
   opacity: 0;
-  animation: apparition 1s ease forwards 2s;
+  animation: apparition 1s ease forwards 3s;
 }
 
 #logomiddle {
-  animation: position 2s ease forwards 1.5s, apparition 1s ease forwards 0.3s;
-  top: 300%;
+  animation: position 1s ease forwards 2.5s, apparition 1.5s ease forwards 0.5s;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(0deg);
   height: 500px;
   width: auto;
   opacity: 0;
@@ -17,11 +17,13 @@ body * {
 
 @keyframes position {
   to {
-    top: 20%;
+    top: 3%;
     left: 50%;
     transform: translate(-50%);
     height: 100px;
     width: auto;
+    position: fixed;
+    z-index: 999999;
   }
 }
 

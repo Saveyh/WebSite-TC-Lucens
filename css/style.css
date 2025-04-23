@@ -31,8 +31,8 @@ header {
 }
 
 #logomiddle {
-  position: absolute;
-  top: 20%;
+  position: fixed;
+  top: 3%;
   left: 50%;
   transform: translate(-50%);
   height: 100px;
