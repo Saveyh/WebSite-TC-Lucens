@@ -1,0 +1,32 @@
+@import "style.css";
+
+body * {
+  opacity: 0;
+  animation: apparition 1s ease forwards 2s;
+}
+
+#logomiddle {
+  animation: position 2s ease forwards 1.5s, apparition 1s ease forwards 0.3s;
+  top: 300%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: auto;
+  opacity: 0;
+}
+
+@keyframes position {
+  to {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100px;
+    width: auto;
+  }
+}
+
+@keyframes apparition {
+  to {
+    opacity: 1;
+  }
+}

@@ -32,25 +32,11 @@ header {
 
 #logomiddle {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  height: 500px;
-  width: auto;
-  z-index: 1000;
-  transition: transform 0.1s linear;
-}
-
-.logo {
-  transition: all 0.5s ease;
-}
-
-.logo.shrink {
-  position: fixed;
+  transform: translate(-50%);
   height: 100px;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: auto;
 }
 
 #ping {
