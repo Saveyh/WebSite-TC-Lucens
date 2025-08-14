@@ -258,3 +258,15 @@ nav button {
 }
 
 /* =============== Section 2 */
+
+.section2 {
+  margin-top: 200px;
+}
+
+.section2 h5 {
+  text-align: center;
+  background-color: rgba(200, 103, 42, 0.15);
+  padding: 10px 10px;
+  border-radius: 50px;
+  font-size: 23px;
+}
