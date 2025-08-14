@@ -13,12 +13,21 @@
 
   /* Fonts */
   --Montserrat: "Montserrat", sans-serif;
-  --EB-Garamond: "EB Garamond", serif;
+  --EB: "EB Garamond", serif;
 
   /* Font-size */
-  --EB-title: 700 96px/1.15 var(--EB-Garamond);
+  --EB-title: 700 96px/1.15 var(--EB);
   --Mont-subtitle: 700 60px/1.15 var(var(--Montserrat));
   --Mont-title: 900 80px/1.15 var(var(--Montserrat));
 
   --title-letterspace: -0.005em;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.EB {
+  font: var(--EB-title);
 }
