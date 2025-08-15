@@ -1,10 +1,13 @@
 body {
   background-color: var(--background-white);
+  font-family: var(--Montserrat);
+  color: var(--noir);
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: var(--Montserrat);
-  color: var(--noir);
 }
 
 header {
@@ -61,7 +64,7 @@ nav button {
   top: 2vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 95vh;
-  width: 90vw;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,8 +208,10 @@ h2 {
 
 .section1 #cards {
   display: flex;
-  gap: 30px;
-  width: 90vw;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  width: 100%;
   margin-top: 80px;
 }
 
@@ -215,7 +220,7 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   height: 675px;
-  width: 530;
+  width: 570px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -223,17 +228,14 @@ h2 {
 
 .section1 #cards #card1 {
   background-image: url(../assets/img/Image1.png);
-  flex: 1;
 }
 
 .section1 #cards #card2 {
   background-image: url(../assets/img/Image2.png);
-  flex: 1;
 }
 
 .section1 #cards #card3 {
   background-image: url(../assets/img/Image3.png);
-  flex: 1;
 }
 
 .section1 #cards .text_card {
@@ -291,7 +293,7 @@ h5 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 87.5vw;
+  width: 87.5%;
 }
 
 .section4 #prices {
@@ -305,6 +307,7 @@ h5 {
 .section4 #gradient-price {
   position: absolute;
   z-index: -1;
+  margin-top: -200px;
 }
 
 .section4 #prices .price {
@@ -436,4 +439,22 @@ h5 {
 
 .section5 {
   margin-top: 200px;
+}
+
+/* =============== Responsive */
+
+/* @media (max-width: 1919px) {
+  .container {
+    transform: scale(calc(100vw / 1920));
+    transform-origin: top center;
+  }
+} */
+
+/* Desktop plus grand que 1920px */
+@media (min-width: 1920px) {
+  .container {
+    width: 1920px; /* reste à la taille du design */
+    margin-left: auto; /* centre le container */
+    margin-right: auto;
+  }
 }
