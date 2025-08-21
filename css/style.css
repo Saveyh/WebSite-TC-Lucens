@@ -23,6 +23,11 @@
   --title-letterspace: -0.005em;
 }
 
+::selection {
+  background-color: rgba(233, 223, 41, 0.302);
+  color: var(--noir);
+}
+
 a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.85);
@@ -30,6 +35,19 @@ a {
 
 .EB {
   font: var(--EB-title);
+}
+
+button {
+  cursor: pointer;
+}
+
+.black-button::selection {
+  background-color: black;
+  color: white;
+}
+
+h5::selection {
+  background-color: rgba(200, 103, 42, 0.15);
 }
 
 img,
