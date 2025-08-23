@@ -58,3 +58,13 @@ svg {
   -moz-user-drag: none;
   -o-user-drag: none;
 }
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active,
+a:active {
+  background: none;
+}

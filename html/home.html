@@ -20,8 +20,19 @@
   </head>
   <body>
     <header>
-      <img src="../assets/svg/logo.svg" alt="logo" draggable="false" />
+      <img
+        id="outside-logo"
+        src="../assets/svg/logo.svg"
+        alt="logo"
+        draggable="false"
+      />
       <nav>
+        <img
+          id="inside-logo"
+          src="../assets/svg/logo.svg"
+          alt="logo"
+          draggable="false"
+        />
         <ul>
           <li><a href="home.html">Home</a></li>
           <li><a href="Club.html">Club</a></li>
@@ -29,10 +40,19 @@
           <li><a href="Compétition.html">Compétition</a></li>
         </ul>
         <button class="black-button">Contact</button>
+        <div id="mobile-nav">
+          <a href="">Contact</a>
+          <img src="../assets/svg/burger-menu.svg" alt="" />
+        </div>
       </nav>
     </header>
 
     <div class="container">
+      <img
+        id="landing-images"
+        src="../assets/img/landing-images.png"
+        alt="Photos du club"
+      />
       <div class="landing">
         <div class="hero">
           <a id="lien-swiss" href="#"
@@ -227,6 +247,28 @@
         <ul class="faq">
           <li>
             <div class="question">
+              <p>Possible de jouer sans être membre ?</p>
+              <img
+                src="../assets/svg/icone-plus.svg"
+                class="icone-plus"
+                alt=""
+              />
+            </div>
+            <div class="answer">
+              Oui, vous pouvez tout à fait réserver un court sans être membre.
+              Le payement se fait en ligne,
+              <a
+                class="plugin"
+                href="https://tclucens.plugin.ch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ici</a
+              >.
+            </div>
+          </li>
+
+          <li>
+            <div class="question">
               <p>Puis-je faire un essai avant de m'inscrire ?</p>
               <img
                 src="../assets/svg/icone-plus.svg"
@@ -235,13 +277,15 @@
               />
             </div>
             <div class="answer">
-              Oui, vous pouvez tout à fait réserver un terrain sans être membre.
-              Le payement se fait en ligne, ici.
+              Bien sûr ! Si vous devenez membre après avoir réservé des courts
+              en étant non-membre, le total payé vous est réduit de la première
+              cotisation.
             </div>
           </li>
+
           <li>
             <div class="question">
-              <p>Possible de jouer sans être membre ?</p>
+              <p>Comment accéder aux terrains ?</p>
               <img
                 src="../assets/svg/icone-plus.svg"
                 class="icone-plus"
@@ -254,19 +298,7 @@
               il suffit de taper son code pour ouvrir la porte.
             </div>
           </li>
-          <li>
-            <div class="question">
-              <p>Comment accéder aux terrains ?</p>
-              <img
-                src="../assets/svg/icone-plus.svg"
-                class="icone-plus"
-                alt=""
-              />
-            </div>
-            <div class="answer">
-              Oui, vous pouvez faire un essai gratuit avant de vous inscrire.
-            </div>
-          </li>
+
           <li>
             <div class="question">
               <p>Est-ce que du matériel est mis à disposition ?</p>
@@ -277,7 +309,9 @@
               />
             </div>
             <div class="answer">
-              Oui, vous pouvez faire un essai gratuit avant de vous inscrire.
+              Oui, dans chaque terrain, vous trouverez des caisses dans
+              lesquelles il y a des raquettes, des balles et d'autre matériel de
+              jeu.
             </div>
           </li>
         </ul>
@@ -336,7 +370,7 @@
           <div id="left-low-footer">
             <p>@ Tennis Club Lucens 2025</p>
             <p>|</p>
-            <p>Conception et développement : Giaquinto Matteo</p>
+            <p>Website : <i>Matteo & Calvin</i></p>
           </div>
           <p>Disponibilité des terrains</p>
         </div>

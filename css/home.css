@@ -14,10 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
 }
 
 header {
-  display: none; /* flex */
+  display: flex;
   position: fixed;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +27,10 @@ header {
   height: 60px;
   z-index: 100;
   gap: 25px;
+}
+
+header #inside-logo {
+  display: none;
 }
 
 nav {
@@ -65,6 +70,13 @@ nav button {
 
 /* ================= Landing / Hero */
 
+#landing-images {
+  position: absolute;
+  top: 130px;
+  margin-left: -80px;
+  z-index: 2;
+}
+
 .landing {
   position: relative;
   top: 2vh;
@@ -84,6 +96,7 @@ nav button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
 }
 
 .hero a#lien-swiss {
@@ -488,7 +501,7 @@ h5 {
   justify-content: space-between;
   flex-direction: column;
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: all 0.2s cubic-bezier(1, 0.01, 0.83, 0.67);
   overflow: hidden;
 }
 
@@ -513,14 +526,15 @@ h5 {
 
 .section5 ul li .answer {
   opacity: 0;
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 40px;
   width: 80%;
-  transition: all 0.7s ease;
+  line-height: 130%;
+  transition: all 0.5s ease;
 }
 
 .section5 ul li.active {
-  height: 200px;
+  height: 220px;
 }
 
 .section5 ul li.active .answer {
@@ -533,6 +547,13 @@ h5 {
 
 .section5 ul li.active img {
   transform: rotate(45deg);
+}
+
+.section5 ul li .plugin {
+  font-style: italic;
+  text-decoration: underline;
+  color: blue;
+  letter-spacing: 0.05em;
 }
 
 .section5 .last-div {
@@ -657,211 +678,390 @@ footer .sous-section ul li:first-child {
 /* Desktop plus petit que 1920px */
 @media (max-width: 1919px) {
   .container {
-    transform: scale(0.9896);
+    transform: scale(0.9396);
     transform-origin: top center;
+  }
+  header {
+    transform: scale(0.9396);
+  }
+  .landing {
+    height: 1100px;
   }
 }
 
 @media (max-width: 1850px) {
   .container {
-    transform: scale(0.9635);
+    transform: scale(0.9135);
+  }
+  header {
+    transform: scale(0.9135);
   }
 }
 
 @media (max-width: 1800px) {
   .container {
-    transform: scale(0.9375);
+    transform: scale(0.8875);
+  }
+  header {
+    transform: scale(0.8875);
   }
 }
 
 @media (max-width: 1750px) {
   .container {
-    transform: scale(0.9115);
+    transform: scale(0.8615);
+  }
+  header {
+    transform: scale(0.8615);
   }
 }
 
 @media (max-width: 1728px) {
   .container {
-    transform: scale(0.9);
+    transform: scale(0.85);
+  }
+  header {
+    transform: scale(0.85);
   }
 }
 
 @media (max-width: 1700px) {
   .container {
-    transform: scale(0.8854);
+    transform: scale(0.8354);
+  }
+  header {
+    transform: scale(0.8354);
   }
 }
 
 @media (max-width: 1680px) {
   .container {
-    transform: scale(0.875);
+    transform: scale(0.825);
+  }
+  header {
+    transform: scale(0.825);
   }
 }
 
 @media (max-width: 1650px) {
   .container {
-    transform: scale(0.8594);
+    transform: scale(0.8094);
+  }
+  header {
+    transform: scale(0.8094);
   }
 }
 
 @media (max-width: 1600px) {
   #viewport {
-    transform: scale(0.8333);
+    transform: scale(0.7833);
+  }
+  header {
+    transform: scale(0.7833);
   }
 }
 
 @media (max-width: 1536px) {
   .container {
-    transform: scale(0.8);
+    transform: scale(0.75);
+  }
+  header {
+    transform: scale(0.75);
   }
 }
 
 @media (max-width: 1500px) {
   .container {
-    transform: scale(0.7812);
+    transform: scale(0.7312);
+  }
+  header {
+    transform: scale(0.7312);
   }
 }
 
 @media (max-width: 1480px) {
   .container {
-    transform: scale(0.7708);
+    transform: scale(0.7208);
+  }
+  header {
+    transform: scale(0.7208);
   }
 }
 
 @media (max-width: 1440px) {
   .container {
-    transform: scale(0.75);
+    transform: scale(0.7);
+  }
+  header {
+    transform: scale(0.7);
   }
 }
 
 @media (max-width: 1400px) {
   .container {
-    transform: scale(0.7292);
+    transform: scale(0.6792);
+  }
+  header {
+    transform: scale(0.6792);
   }
 }
 
 @media (max-width: 1366px) {
   .container {
-    transform: scale(0.7115);
+    transform: scale(0.6615);
+  }
+  header {
+    transform: scale(0.6615);
   }
 }
 
 @media (max-width: 1360px) {
   .container {
-    transform: scale(0.7083);
+    transform: scale(0.6583);
+  }
+  header {
+    transform: scale(0.6583);
   }
 }
 
 @media (max-width: 1344px) {
   .container {
-    transform: scale(0.7);
+    transform: scale(0.65);
+  }
+  header {
+    transform: scale(0.65);
   }
 }
 
 @media (max-width: 1336px) {
   .container {
-    transform: scale(0.6958);
+    transform: scale(0.6458);
+  }
+  header {
+    transform: scale(0.6458);
   }
 }
 
 @media (max-width: 1320px) {
   .container {
-    transform: scale(0.6875);
+    transform: scale(0.6375);
+  }
+  header {
+    transform: scale(0.6375);
   }
 }
 
 @media (max-width: 1300px) {
   .container {
-    transform: scale(0.6771);
+    transform: scale(0.6271);
+  }
+  header {
+    transform: scale(0.6271);
   }
 }
 
 @media (max-width: 1280px) {
   .container {
-    transform: scale(0.6667);
+    transform: scale(0.6167);
+  }
+  header {
+    transform: scale(0.6167);
   }
 }
 
 @media (max-width: 1250px) {
   .container {
-    transform: scale(0.651);
+    transform: scale(0.601);
+  }
+  header {
+    transform: scale(0.601);
   }
 }
 
 @media (max-width: 1220px) {
   .container {
-    transform: scale(0.6354);
+    transform: scale(0.5854);
+  }
+  header {
+    transform: scale(0.5854);
   }
 }
 
 @media (max-width: 1200px) {
   .container {
-    transform: scale(0.625);
+    transform: scale(0.575);
+  }
+  header {
+    transform: scale(0.575);
   }
 }
 
 @media (max-width: 1180px) {
   .container {
-    transform: scale(0.6146);
+    transform: scale(0.5646);
+  }
+  header {
+    transform: scale(0.5646);
   }
 }
 
 @media (max-width: 1152px) {
   .container {
-    transform: scale(0.6);
+    transform: scale(0.55);
+  }
+  header {
+    transform: scale(0.55);
   }
 }
 
 @media (max-width: 1120px) {
   .container {
-    transform: scale(0.5833);
+    transform: scale(0.5333);
+  }
+  header {
+    transform: scale(0.5333);
   }
 }
 
 @media (max-width: 1100px) {
   .container {
-    transform: scale(0.5729);
+    transform: scale(0.5229);
+  }
+  header {
+    transform: scale(0.5229);
   }
 }
 
 @media (max-width: 1080px) {
   .container {
-    transform: scale(0.5625);
+    transform: scale(0.5125);
+  }
+  header {
+    transform: scale(0.5125);
   }
 }
 
 @media (max-width: 1050px) {
   .container {
-    transform: scale(0.5469);
+    transform: scale(0.4969);
+  }
+  header {
+    transform: scale(0.4969);
   }
 }
 
 @media (max-width: 1040px) {
   .container {
-    transform: scale(0.5417);
+    transform: scale(0.4917);
+  }
+  header {
+    transform: scale(0.4917);
   }
 }
 
 @media (max-width: 1030px) {
   .container {
-    transform: scale(0.5365);
+    transform: scale(0.4865);
+  }
+  header {
+    transform: scale(0.4865);
   }
 }
 
 @media (max-width: 1024px) {
   .container {
-    transform: scale(0.5333);
+    transform: scale(0.4833);
+  }
+  header {
+    transform: scale(0.4833);
   }
 }
 
 @media (max-width: 1010px) {
   .container {
-    transform: scale(0.526);
+    transform: scale(0.476);
+  }
+  header {
+    transform: scale(0.476);
   }
 }
 
 @media (max-width: 1000px) {
   .container {
-    transform: scale(0.5208);
+    transform: scale(0.4708);
+  }
+  header {
+    transform: scale(0.4708);
+  }
+}
+
+/* ===================== Mobile */
+
+@media (max-width: 500px) {
+  *,
+  html,
+  body,
+  .container,
+  header {
+    transform: scale(1);
+  }
+
+  .container {
+    width: 100vw;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  header {
+    display: flex;
+    top: 3vh;
+    width: 85vw;
+    height: 50px;
+    max-height: 50px;
+    gap: 25px;
+  }
+
+  header #outside-logo {
+    display: none;
+  }
+
+  header #inside-logo {
+    display: inline;
+    height: 70px;
+    width: auto;
+    margin-left: -5px;
+  }
+
+  header nav ul,
+  header button {
+    display: none;
+  }
+
+  nav {
+    font-size: 12px;
+    width: 100%;
+    height: 50px;
+  }
+
+  #mobile-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    color: rgba(25, 25, 25, 0.6);
+    margin-right: 20px;
+  }
+
+  .landing {
+    top: 2vh;
+    height: 95dvh;
+    width: 90%;
+    border-radius: 20px;
+    background-image: url("../assets/svg/hero_gradient.svg");
+    background-size: 100% 80%;
   }
 }
