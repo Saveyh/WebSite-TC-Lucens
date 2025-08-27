@@ -101,10 +101,18 @@
           <span class="titre2">club</span>
         </h2>
         <h4>
-          Compétitions ou moments partagés : à Lucens, on progresse, mais
-          surtout, on crée des souvenirs.
+          <span id="span1">
+            Compétitions ou moments partagés : à Lucens , on progresse, mais
+            surtout, on crée des souvenirs.
+          </span>
+          <span id="span2">
+            Compétitions ou moments partagés : à Lucens,
+            <br />
+            on progresse, mais surtout, on crée des souvenirs.
+          </span>
         </h4>
         <div id="cards">
+          <!-- <div class="cards-inner"> -->
           <div class="card" id="card1">
             <div class="text_card">
               <h3>CLUB</h3>
@@ -158,6 +166,7 @@
                 />
               </svg>
             </div>
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -168,7 +177,18 @@
           A<span class="titre1"> propos </span>du
           <span class="titre2">club</span>
         </h2>
-        <img src="../assets/img/propos-content.png" alt="" draggable="false" />
+        <img
+          id="sec2-img1"
+          src="../assets/img/propos-content.png"
+          alt=""
+          draggable="false"
+        />
+        <img
+          id="sec2-img2"
+          src="../assets/img/propos-mobile.png"
+          alt=""
+          draggable="false"
+        />
       </div>
 
       <div class="section3">
@@ -184,6 +204,12 @@
         <img
           src="../assets/svg/gradient-price.svg"
           id="gradient-price"
+          alt=""
+          draggable="false"
+        />
+        <img
+          src="../assets/svg/gradient-price-mobile.svg"
+          id="gradient-price-mobile"
           alt=""
           draggable="false"
         />
@@ -249,11 +275,12 @@
           <span class="titre1"> Foire </span>aux
           <span class="titre2"> Questions </span>
         </h2>
-        <h4>
+        <h4 id="h41">
           Besoin d'aide ? Notre FAQ rassemble les réponses aux questions que
           l'on nous pose le plus souvent. <br />
           Vous y trouverez rapidement des informations claires et utiles.
         </h4>
+        <h4 id="h42">FAQ rapide : toutes vos réponses en un clic.</h4>
         <ul class="faq">
           <li>
             <div class="question">
@@ -332,7 +359,18 @@
       </div>
 
       <footer>
-        <img src="../assets/svg/ligne-footer.svg" class="ligne-footer" alt="" />
+        <img
+          src="../assets/svg/ligne-footer.svg"
+          class="ligne-footer"
+          alt=""
+          draggable="false"
+        />
+        <img
+          src="../assets/svg/ligne-footer-mobile.svg"
+          class="ligne-footer-mobile"
+          alt=""
+          draggable="false"
+        />
         <div class="inside-footer">
           <div id="left-footer">
             <img src="../assets/svg/logo.svg" alt="" draggable="false" />
@@ -375,7 +413,18 @@
             </div>
           </div>
         </div>
-        <img src="../assets/svg/ligne-footer.svg" class="ligne-footer" alt="" />
+        <img
+          src="../assets/svg/ligne-footer.svg"
+          class="ligne-footer"
+          alt=""
+          draggable="false"
+        />
+        <img
+          src="../assets/svg/ligne-footer-mobile.svg"
+          class="ligne-footer-mobile"
+          alt=""
+          draggable="false"
+        />
         <div class="low_footer">
           <div id="left-low-footer">
             <p>@ Tennis Club Lucens 2025</p>
@@ -386,25 +435,42 @@
         </div>
       </footer>
     </div>
+
+    <!-- Script pour l'adaptation de la hauteur de la page -->
     <script>
       (function () {
         const bodyEl = document.body;
-        const inner = document.querySelector(".container");
+        const container = document.querySelector(".container");
 
-        if (!bodyEl || !inner) return;
+        if (!bodyEl || !container) return;
 
         function applyViewportHeight() {
-          const rect = inner.getBoundingClientRect();
-          bodyEl.style.height = Math.ceil(rect.height) + "px";
+          const rect = container.getBoundingClientRect();
+          let scale = 1;
+
+          // Si viewport < 500px, calculer le scale en fonction de la largeur (mobile scaling)
+          if (window.innerWidth < 500) {
+            scale = window.innerWidth / 500; // 500px = 100%
+          }
+
+          // Ajuster la hauteur du body en divisant par le scale
+          bodyEl.style.height = Math.ceil(rect.height / scale) + "px";
           bodyEl.style.marginBottom = "0";
         }
 
         window.addEventListener("load", applyViewportHeight);
         window.addEventListener("resize", applyViewportHeight);
+
         const mo = new MutationObserver(applyViewportHeight);
-        mo.observe(inner, { childList: true, subtree: true, attributes: true });
+        mo.observe(container, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+        });
       })();
     </script>
+
+    <!-- Script pour les questions FAQ -->
     <script>
       const faqItems = document.querySelectorAll(".faq li");
 
