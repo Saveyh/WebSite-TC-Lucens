@@ -207,6 +207,7 @@ nav button {
   width: 440px;
   letter-spacing: 0.01em;
   font-family: var(--Montserrat);
+  transition: all 0.3s ease;
 }
 
 .hero #hero-buttons #reserver {
@@ -218,6 +219,20 @@ nav button {
 .hero #hero-buttons #inscrire {
   background-color: var(--noir);
   color: rgba(255, 255, 255, 0.85);
+}
+
+.hero #hero-buttons #reserver:hover {
+  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    -15px 15px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-size: 27px;
+}
+
+.hero #hero-buttons #inscrire:hover {
+  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    15px 15px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-size: 27px;
 }
 
 /* ================= Section 1 */
@@ -281,6 +296,17 @@ h4 {
   justify-content: center;
   align-items: flex-end;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section1 #cards .card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.section1 #cards .card:hover .text_card svg {
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
 }
 
 .section1 #cards .card h3::selection {
@@ -321,6 +347,7 @@ h4 {
   border-radius: 50%;
   padding: 10px;
   height: 60px;
+  transition: all 0.3s ease;
 }
 
 /* =============== Section 2 */
