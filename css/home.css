@@ -743,6 +743,12 @@ footer .sous-section ul li:first-child {
   gap: 20px;
 }
 
+#post-it {
+  position: absolute;
+  margin-top: -320px;
+  margin-left: 1250px;
+}
+
 /* =============== Responsive */
 
 /* Desktop plus grand que 1920px */
@@ -1472,6 +1478,7 @@ footer .sous-section ul li:first-child {
 
   .section2 {
     margin-top: 30px;
+    width: 500px;
   }
 
   .section2 #sec2-img1 {
@@ -1480,14 +1487,16 @@ footer .sous-section ul li:first-child {
 
   .section2 #sec2-img2 {
     display: inline;
-    width: 100vw;
-    margin-top: 70px;
+    width: 850px;
+    margin-top: -150px;
+    margin-left: -40px;
   }
 
   /* === Section 3 */
 
   .section3 img {
     transform: scale(0.35);
+    margin-top: -100px;
   }
 
   /* === Section 4 */
@@ -1657,6 +1666,13 @@ footer .sous-section ul li:first-child {
     display: inline;
     width: 103%;
     margin: 50px 0;
+  }
+
+  #post-it {
+    position: absolute;
+    height: 300px;
+    margin-top: -300px;
+    margin-left: 135px;
   }
 }
 
