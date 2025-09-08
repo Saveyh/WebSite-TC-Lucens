@@ -713,6 +713,32 @@ footer .sous-section ul {
 
 footer .sous-section ul li {
   white-space: nowrap;
+  position: relative;
+}
+
+footer .sous-section ul li a {
+  position: relative;
+  display: inline-block;
+}
+
+footer .sous-section ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0%;
+
+  background-color: #2d2d2d;
+  transition: all 0.5s;
+}
+
+footer .sous-section ul li a:hover::before {
+  width: 100%;
+}
+
+footer .sous-section ul li a:hover {
+  font-style: italic;
 }
 
 footer .sous-section ul li:first-child {
@@ -1303,7 +1329,6 @@ footer .sous-section ul li:first-child {
     transform: scale(0.25);
   }
 }
-
 
 /* ===================== Mobile */
 
