@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TC Lucens</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
 
@@ -103,7 +105,9 @@
               rel="noopener noreferrer"
               >Réserver un court</a
             >
-            <a id="inscrire" class="black-button" href="">S'inscrire</a>
+            <a id="inscrire" class="black-button" href="./club/index.html"
+              >S'inscrire</a
+            >
           </div>
         </div>
       </div>
@@ -125,8 +129,9 @@
           </span>
         </h4>
         <div id="cards">
-          <!-- <div class="cards-inner"> -->
-          <div
+          <div class="spacer-card"></div>
+          <a
+            href="./club/index.html"
             class="card"
             id="card1"
             data-aos="zoom-in-up"
@@ -148,8 +153,9 @@
                 />
               </svg>
             </div>
-          </div>
-          <div
+          </a>
+          <a
+            href="./cours/index.html"
             class="card"
             id="card2"
             data-aos="zoom-in-up"
@@ -171,15 +177,16 @@
                 />
               </svg>
             </div>
-          </div>
-          <div
+          </a>
+          <a
+            href="./competition/index.html"
             class="card"
             id="card3"
             data-aos="zoom-in-up"
             data-aos-offset="250"
           >
             <div class="text_card">
-              <h3>TOURNOIS</h3>
+              <h3 id="h3-tournois">TOURNOIS</h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -194,8 +201,8 @@
                 />
               </svg>
             </div>
-            <!-- </div> -->
-          </div>
+          </a>
+          <div class="spacer-card"></div>
         </div>
       </div>
 
@@ -527,7 +534,13 @@
           <div id="left-low-footer">
             <p>@ Tennis Club Lucens 2025</p>
             <p>|</p>
-            <p>Website : <i>Matteo & Calvin</i></p>
+            <p>
+              Website :
+              <i
+                ><a href="mailto:matteogiaquinto.pro@gmail.com">Matteo</a> &
+                <a href="mailto:matteogiaquinto.pro@gmail.com">Calvin</a></i
+              >
+            </p>
           </div>
           <img id="post-it" src="./assets/svg/post-it.svg" alt="" />
         </div>
@@ -566,6 +579,21 @@
           attributes: true,
         });
       })();
+    </script>
+
+    <!-- ==================== Script pour centrer la 2e card -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const cardsContainer = document.getElementById("cards");
+        const secondCard = cardsContainer.querySelectorAll(".card")[1]; // index 1 = 2e card
+
+        // calcule le décalage pour centrer la 2e card
+        const offset =
+          secondCard.offsetLeft -
+          (cardsContainer.clientWidth - secondCard.clientWidth) / 2;
+
+        cardsContainer.scrollLeft = offset;
+      });
     </script>
 
     <!-- ======================== Script pour les questions FAQ -->

@@ -66,5 +66,21 @@ a {
 
 button:active,
 a:active {
-  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 43, 43, 0.6);
+  border-radius: 8px;
+}
+
+.black-button {
+  transition: all 0.3s ease;
+}
+
+.black-button:hover {
+  background-color: #e9df29 !important;
+  color: #2d2d2d !important;
+  transition: all 0.3s ease;
 }

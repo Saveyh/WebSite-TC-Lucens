@@ -286,6 +286,10 @@ h4 {
   margin-top: 80px;
 }
 
+.section1 #cards .spacer-card {
+  display: none;
+}
+
 .section1 #cards .card {
   background-size: contain;
   background-position: center;
@@ -457,6 +461,16 @@ h5 {
 
 .section4 #prices .price2 {
   z-index: 3;
+}
+
+.section4 #prices .price1 .top-price .in-top-price p::selection,
+.section4 #prices .price1 .top-price .in-top-price h3::selection {
+  background-color: #84848456;
+}
+
+.section4 #prices .price2 .top-price .in-top-price p::selection,
+.section4 #prices .price2 .top-price .in-top-price h3::selection {
+  background-color: #9f633d56;
 }
 
 .section4 #prices .price .top-price .in-top-price p {
@@ -1332,6 +1346,15 @@ footer .sous-section ul li:first-child {
 
 /* ===================== Mobile */
 
+@media (hover: none) and (pointer: coarse) {
+  button:hover,
+  a:hover {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+}
+
 @media (max-width: 500px) {
   .container,
   header {
@@ -1488,10 +1511,37 @@ footer .sous-section ul li:first-child {
     display: inline;
   }
 
+  /* === Le carousel === */
   .section1 #cards {
-    margin-top: 50px;
-    transform: scale(0.65);
-    margin-top: -60px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 0 10%;
+    margin-top: 40px;
+    width: 650px;
+  }
+
+  .section1 #cards .spacer-card {
+    display: inline;
+    flex: 0 0 10%;
+  }
+
+  .section1 #cards::-webkit-scrollbar {
+    display: none; /* cache la scrollbar sur mobile */
+  }
+
+  .section1 #cards .card {
+    width: 200px;
+    flex: 0 0 80%; /* chaque card fait 80% de la largeur écran */
+    height: 500px; /* ajuste si nécessaire */
+    scroll-snap-align: center;
+  }
+
+  #h3-tournois {
+    font-size: 2.8rem;
   }
 
   /* === Section 2 */
@@ -1503,7 +1553,7 @@ footer .sous-section ul li:first-child {
   }
 
   .section2 {
-    margin-top: 30px;
+    margin-top: 150px;
     width: 500px;
   }
 
