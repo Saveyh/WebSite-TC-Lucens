@@ -1527,11 +1527,12 @@ footer .sous-section ul li:first-child {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 10px;
+    gap: 0px;
     justify-content: flex-start;
     padding: 0 10%;
     margin-top: 40px;
     width: 650px;
+    margin-left: -75px;
   }
 
   .section1 #cards .spacer-card {
@@ -1545,7 +1546,7 @@ footer .sous-section ul li:first-child {
 
   .section1 #cards .card {
     width: 200px;
-    flex: 0 0 80%;
+    flex: 0 0 75%;
     height: 500px;
     scroll-snap-align: center;
   }
