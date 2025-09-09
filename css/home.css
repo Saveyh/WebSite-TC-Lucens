@@ -1346,15 +1346,6 @@ footer .sous-section ul li:first-child {
 
 /* ===================== Mobile */
 
-@media (hover: none) and (pointer: coarse) {
-  button:hover,
-  a:hover {
-    background: none !important;
-    color: inherit !important;
-    box-shadow: none !important;
-  }
-}
-
 @media (max-width: 500px) {
   .container,
   header {
@@ -1476,6 +1467,13 @@ footer .sous-section ul li:first-child {
     margin: 0px 0 0 0;
   }
 
+  .hero #hero-buttons #reserver:hover,
+  .hero #hero-buttons #inscrire:hover {
+    box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+      4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+
   /* === Section 1 */
 
   .section1 {
@@ -1511,7 +1509,7 @@ footer .sous-section ul li:first-child {
     display: inline;
   }
 
-  /* === Le carousel === */
+  /* Le carousel */
   .section1 #cards {
     display: flex;
     overflow-x: auto;
@@ -1530,14 +1528,18 @@ footer .sous-section ul li:first-child {
   }
 
   .section1 #cards::-webkit-scrollbar {
-    display: none; /* cache la scrollbar sur mobile */
+    display: none;
   }
 
   .section1 #cards .card {
     width: 200px;
-    flex: 0 0 80%; /* chaque card fait 80% de la largeur écran */
-    height: 500px; /* ajuste si nécessaire */
+    flex: 0 0 80%;
+    height: 500px;
     scroll-snap-align: center;
+  }
+
+  .section1 #cards .card:hover {
+    transform: scale(1);
   }
 
   #h3-tournois {
