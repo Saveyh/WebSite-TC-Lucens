@@ -93,6 +93,10 @@ nav button {
   z-index: 2;
 }
 
+#box-img-mobile {
+  display: none;
+}
+
 #landing-images-mobile {
   display: none;
 }
@@ -1353,13 +1357,13 @@ footer .sous-section ul li:first-child {
   }
 
   .container {
-    width: 500px;
+    width: 491px;
     position: relative;
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
   }
 
   header {
@@ -1421,12 +1425,18 @@ footer .sous-section ul li:first-child {
     display: none;
   }
 
-  #landing-images-mobile {
+  #box-img-mobile {
     display: inline;
+    width: 491px;
+    overflow: hidden;
     position: absolute;
     top: 8dvh;
     left: 0;
     z-index: -1;
+  }
+
+  #landing-images-mobile {
+    display: inline;
   }
 
   #lien-swiss {
@@ -1478,6 +1488,8 @@ footer .sous-section ul li:first-child {
 
   .section1 {
     margin-top: 200px;
+    overflow: hidden;
+    width: 491px;
   }
 
   h2 {
@@ -1556,7 +1568,8 @@ footer .sous-section ul li:first-child {
 
   .section2 {
     margin-top: 150px;
-    width: 500px;
+    width: 491px;
+    overflow: hidden;
   }
 
   .section2 #sec2-img1 {
@@ -1572,6 +1585,14 @@ footer .sous-section ul li:first-child {
 
   /* === Section 3 */
 
+  .section3 {
+    width: 491px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .section3 img {
     transform: scale(0.35);
     margin-top: -100px;
@@ -1580,6 +1601,8 @@ footer .sous-section ul li:first-child {
   /* === Section 4 */
 
   .section4 {
+    width: 491px;
+    overflow: hidden;
     margin-top: -150px;
   }
 
@@ -1601,6 +1624,7 @@ footer .sous-section ul li:first-child {
   .section4 #gradient-price-mobile {
     display: inline;
     position: absolute;
+    max-width: 491px;
     margin-top: 300px;
     z-index: -1;
   }
@@ -1679,7 +1703,7 @@ footer .sous-section ul li:first-child {
 
   footer {
     margin-top: 100px;
-    width: 85%;
+    width: 90%;
     background-image: none;
     /* background-repeat: no-repeat;
     background-position: center -200px;

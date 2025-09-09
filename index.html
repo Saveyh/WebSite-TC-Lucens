@@ -58,16 +58,13 @@
         src="./assets/img/landing-images.png"
         alt="Photos du club"
       />
-      <img
-        id="landing-images-mobile"
-        src="./assets/img/landing-images-mobile.png"
-        alt="Photos du club"
-      />
-      <img
-        id="landing-bot"
-        src="./assets/img/landing-bot-mobile.png"
-        alt="Photos du club"
-      />
+      <div id="box-img-mobile">
+        <img
+          id="landing-images-mobile"
+          src="./assets/img/landing-images-mobile.png"
+          alt="Photos du club"
+        />
+      </div>
       <div class="landing">
         <div class="hero">
           <a
@@ -547,37 +544,52 @@
       </footer>
     </div>
 
-    <!-- =============== Script pour l'adaptation de la hauteur de la page -->
     <script>
       (function () {
         const bodyEl = document.body;
         const container = document.querySelector(".container");
-
         if (!bodyEl || !container) return;
 
-        function applyViewportHeight() {
-          const rect = container.getBoundingClientRect();
-          let scale = 1;
+        let resizeTimer = null;
 
-          // Si viewport < 500px, calculer le scale en fonction de la largeur (mobile scaling)
-          if (window.innerWidth < 500) {
-            scale = window.innerWidth / 500; // 500px = 100%
+        function applyHeight() {
+          const rectH = Math.ceil(container.getBoundingClientRect().height);
+          const newH = rectH + "px";
+
+          if (bodyEl.style.height !== newH) {
+            bodyEl.style.height = newH;
           }
-
-          // Ajuster la hauteur du body en divisant par le scale
-          bodyEl.style.height = Math.ceil(rect.height / scale) + "px";
           bodyEl.style.marginBottom = "0";
         }
 
-        window.addEventListener("load", applyViewportHeight);
-        window.addEventListener("resize", applyViewportHeight);
+        function scheduleApply() {
+          if (resizeTimer) clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(applyHeight, 60);
+        }
 
-        const mo = new MutationObserver(applyViewportHeight);
+        // Initial
+        window.addEventListener("load", () => {
+          applyHeight();
+          setTimeout(applyHeight, 500); // sécurité après fonts/images
+        });
+
+        // resize/orientation
+        window.addEventListener("resize", scheduleApply);
+        window.addEventListener("orientationchange", scheduleApply);
+
+        // observer mutations
+        const mo = new MutationObserver(() => {
+          requestAnimationFrame(applyHeight);
+        });
         mo.observe(container, {
           childList: true,
           subtree: true,
           attributes: true,
+          characterData: true,
         });
+
+        // fallback
+        requestAnimationFrame(applyHeight);
       })();
     </script>
 
