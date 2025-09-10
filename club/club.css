@@ -1,0 +1,17 @@
+.hero h1 {
+  line-height: 132%;
+}
+
+.hero h4 {
+  line-height: 150%;
+}
+
+@media (max-width: 500px) {
+  .hero .mobile-no {
+    display: none;
+  }
+
+  .hero h4 {
+    font-size: 16px;
+  }
+}

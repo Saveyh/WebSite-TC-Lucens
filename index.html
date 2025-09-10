@@ -50,9 +50,15 @@
           <li><a href="./cours/index.html">Cours</a></li>
           <li><a href="./competition/index.html">Compétition</a></li>
         </ul>
-        <button class="black-button">Contact</button>
+        <a
+          id="contact-nav"
+          href="mailto:tlcinfo@tclucens.ch"
+          class="black-button"
+        >
+          Contact
+        </a>
         <div id="mobile-nav">
-          <a href="">Contact</a>
+          <a href="mailto:tlcinfo@tclucens.ch">Contact</a>
           <img src="./assets/svg/burger-menu.svg" alt="" />
         </div>
       </nav>
@@ -475,7 +481,12 @@
               <ul>
                 <li>Liens utiles</li>
                 <li>
-                  <a href="https://tclucens.plugin.ch/">Réserver un terrain</a>
+                  <a
+                    href="https://tclucens.plugin.ch/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Réserver un terrain</a
+                  >
                 </li>
                 <li><a href="">S'inscrire</a></li>
                 <li><a href="">Contact</a></li>
@@ -550,6 +561,7 @@
       </footer>
     </div>
 
+    <!-- ====================== Hauteur Body fixed -->
     <script>
       (function () {
         const bodyEl = document.body;

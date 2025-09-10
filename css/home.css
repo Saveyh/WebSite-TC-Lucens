@@ -64,7 +64,7 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-nav button {
+nav #contact-nav {
   font-size: inherit;
   background-color: var(--noir);
   color: rgba(255, 255, 255, 0.85);
@@ -1388,7 +1388,7 @@ footer .sous-section ul li:first-child {
   }
 
   header nav ul,
-  header button {
+  header nav #contact-nav {
     display: none;
   }
 
