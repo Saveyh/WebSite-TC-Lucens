@@ -69,9 +69,3 @@ button:focus {
 .black-button {
   transition: all 0.3s ease;
 }
-
-.black-button:hover {
-  background-color: #e9df29 !important;
-  color: #2d2d2d !important;
-  transition: all 0.3s ease;
-}

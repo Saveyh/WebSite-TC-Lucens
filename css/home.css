@@ -80,6 +80,66 @@ nav #contact-nav {
   font-family: var(--Montserrat);
 }
 
+/* ================= Bouton Contact Header - Shine Hover ================= */
+#contact-nav {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease; /* scale, translate et box-shadow */
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  background-color: var(--noir);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 30px;
+  border: none;
+  border-radius: 200px; /* très arrondi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--Montserrat);
+}
+
+/* Gradient lumineux */
+#contact-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+/* Hover Effects */
+#contact-nav:hover {
+  transform: translateY(-3px) scale(1.05); /* légère montée et agrandissement */
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
+    /* bordure interne top claire */ inset 0 -4px 0 rgba(0, 0, 0, 0.5); /* bordure interne bottom foncée */
+  background-color: #e9df29 !important;
+  color: #2d2d2d !important;
+  transition: all 0.3s ease;
+}
+
+/* Animation du gradient au hover */
+#contact-nav:hover::before {
+  animation: shine 0.5s forwards; /* plus rapide */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 #mobile-nav {
   display: none;
 }
@@ -198,8 +258,6 @@ nav #contact-nav {
 
 .hero #hero-buttons #reserver,
 .hero #hero-buttons #inscrire {
-  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
-    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,18 +283,64 @@ nav #contact-nav {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.hero #hero-buttons #reserver:hover {
-  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
-    -15px 15px 4px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  font-size: 27px;
+/* ================= Boutons Landing Hero - Shine Hover ================= */
+.hero #hero-buttons #reserver,
+.hero #hero-buttons #inscrire {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease; /* scale, translate et box-shadow */
+  cursor: pointer;
+  border-radius: 200px; /* très arrondi */
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0),
+    /* top clear initial */ inset 0 -4px 0 rgba(0, 0, 0, 0),
+    /* bottom dark initial */ inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
 }
 
+/* Gradient lumineux */
+.hero #hero-buttons #reserver::before,
+.hero #hero-buttons #inscrire::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+/* Hover Effects */
+.hero #hero-buttons #reserver:hover,
 .hero #hero-buttons #inscrire:hover {
-  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
-    15px 15px 4px 0px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.05); /* léger mouvement et agrandissement */
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
+    /* bordure interne top claire */ inset 0 -4px 0 rgba(0, 0, 0, 0.5),
+    /* bordure interne bottom foncée */ inset 5px 6px 30px
+      rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
-  font-size: 27px;
+}
+
+/* Animation du gradient au hover */
+.hero #hero-buttons #reserver:hover::before,
+.hero #hero-buttons #inscrire:hover::before {
+  animation: shine 0.5s forwards; /* plus rapide */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* ================= Section 1 */
@@ -356,6 +460,39 @@ h4 {
   padding: 10px;
   height: 60px;
   transition: all 0.3s ease;
+}
+
+/* ================= Glare + Tilt sur les cards ================= */
+.section1 #cards .card {
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Halo lumineux (glare), invisible par défaut */
+.section1 #cards .card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translate(var(--x, 0), var(--y, 0));
+  transition: transform 0.05s linear, opacity 0.3s ease;
+  pointer-events: none;
+  opacity: 0; /* pas visible au repos */
+}
+
+/* Visible seulement au hover */
+.section1 #cards .card:hover::after {
+  opacity: 1;
 }
 
 /* =============== Section 2 */
@@ -555,6 +692,62 @@ h5 {
   background: url("../assets/svg/bullet-croix.svg") no-repeat center / contain;
 }
 
+/* ================= Boutons Section 4 - Shine Hover Fluid ================= */
+.section4 #prices .price button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 200px;
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0),
+    inset 0 -4px 0 rgba(0, 0, 0, 0),
+    inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient lumineux */
+.section4 #prices .price button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+/* Hover Effects */
+.section4 #prices .price button:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.5),
+    inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Animation du gradient au hover */
+.section4 #prices .price button:hover::before {
+  animation: shine 0.5s forwards; /* gradient traverse plus vite */
+}
+
+/* Keyframes pour le gradient */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 /* ============== Section 5 */
 
 .section5 {
@@ -669,7 +862,7 @@ h5 {
   justify-content: center;
   border-radius: 100px;
   border: none;
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 500;
   height: 80px;
   width: 480px;
@@ -677,6 +870,73 @@ h5 {
   font-family: var(--Montserrat);
   background-color: var(--noir);
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* ================= Bouton Section 5 - Shine Hover Fluid ================= */
+
+/* CSS de base pour le bouton (garde ton shine hover) */
+#contact-btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section5 .last-div button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* pour scale, translate et box-shadow */
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0),
+    /* top invisible par défaut */ inset 0 -4px 0 rgba(0, 0, 0, 0),
+    /* bottom invisible par défaut */ inset 5px 6px 30px
+      rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient lumineux */
+.section5 .last-div button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+/* Hover Effects */
+.section5 .last-div button:hover {
+  transform: translateY(-3px) scale(1.05); /* léger mouvement + agrandissement */
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
+    /* top visible */ inset 0 -4px 0 rgba(0, 0, 0, 0.5),
+    /* bottom visible */ inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease; /* apparition fluide */
+}
+
+/* Animation du gradient au hover */
+.section5 .last-div button:hover::before {
+  animation: shine 0.5s forwards; /* gradient traverse rapidement */
+}
+
+/* Keyframes pour le gradient */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* ============= Footer */
@@ -1680,6 +1940,10 @@ footer .sous-section ul li:first-child {
 
   .section5 ul li.active {
     height: 150px;
+  }
+
+  .section5 ul li:nth-child(3).active {
+    height: 180px;
   }
 
   .section5 .last-div {
