@@ -67,13 +67,13 @@
     <div class="container">
       <img
         id="landing-images"
-        src="./assets/img/landing-images.png"
+        src="./assets/img/webp/landing-images.webp"
         alt="Photos du club"
       />
       <div id="box-img-mobile">
         <img
           id="landing-images-mobile"
-          src="./assets/img/landing-images-mobile.png"
+          src="./assets/img/webp/landing-images-mobile.webp"
           alt="Photos du club"
         />
       </div>
@@ -235,9 +235,10 @@
         </h2>
         <img
           id="sec2-img1"
-          src="./assets/img/propos-content.png"
+          src="./assets/img/webp/propos-content.webp"
           alt=""
           draggable="false"
+          loading="lazy"
           data-aos="zoom-in-up"
           data-aos-mirror="false"
           data-aos-once="true"
@@ -245,9 +246,10 @@
         />
         <img
           id="sec2-img2"
-          src="./assets/img/propos-mobile.png"
+          src="./assets/img/webp/propos-mobile.webp"
           alt=""
           draggable="false"
+          loading="lazy"
           data-aos="zoom-in-up"
           data-aos-mirror="false"
           data-aos-once="true"
@@ -262,7 +264,12 @@
         data-aos-once="true"
         data-aos-offset="150"
       >
-        <img src="./assets/img/images-carre.png" alt="" draggable="false" />
+        <img
+          src="./assets/img/webp/images-carre.webp"
+          alt="Photos du club"
+          draggable="false"
+          loading="lazy"
+        />
       </div>
 
       <div class="section4">
@@ -288,12 +295,14 @@
           id="gradient-price"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <img
           src="./assets/svg/gradient-price-mobile.svg"
           id="gradient-price-mobile"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <div id="prices">
           <div class="price price1" data-aos="zoom-in-up" data-aos-offset="300">
@@ -389,6 +398,7 @@
                 src="./assets/svg/icone-plus.svg"
                 class="icone-plus"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div class="answer">
@@ -411,6 +421,7 @@
                 src="./assets/svg/icone-plus.svg"
                 class="icone-plus"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div class="answer">
@@ -427,6 +438,7 @@
                 src="./assets/svg/icone-plus.svg"
                 class="icone-plus"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div class="answer">
@@ -443,6 +455,7 @@
                 src="./assets/svg/icone-plus.svg"
                 class="icone-plus"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div class="answer">
@@ -463,16 +476,23 @@
           class="ligne-footer"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <img
           src="./assets/svg/ligne-footer-mobile.svg"
           class="ligne-footer-mobile"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <div class="inside-footer">
           <div id="left-footer">
-            <img src="./assets/svg/logo.svg" alt="" draggable="false" />
+            <img
+              src="./assets/svg/logo.svg"
+              alt=""
+              draggable="false"
+              loading="lazy"
+            />
             <div id="meteo"></div>
           </div>
           <div id="links-footer">
@@ -536,12 +556,14 @@
           class="ligne-footer"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <img
           src="./assets/svg/ligne-footer-mobile.svg"
           class="ligne-footer-mobile"
           alt=""
           draggable="false"
+          loading="lazy"
         />
         <div class="low_footer">
           <div id="left-low-footer">
@@ -555,7 +577,13 @@
               >
             </p>
           </div>
-          <img id="post-it" src="./assets/svg/post-it.svg" alt="" />
+          <img
+            id="post-it"
+            src="./assets/svg/post-it.svg"
+            alt="Bon Match !"
+            loading="lazy"
+            draggable="false"
+          />
         </div>
       </footer>
     </div>
@@ -563,5 +591,25 @@
     <!-- =================== JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./script.js"></script>
+
+    <!-- =================== Smooth scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis"></script>
+    <script>
+      // Création du scroll smooth
+      const lenis = new Lenis({
+        duration: 1, // plus la valeur est haute, plus c'est fluide/lent
+        easing: (t) => 1 - Math.pow(1 - t, 3), // easing cubic out très doux
+        wheelMultiplier: 0.6, // ↓ réduit la "puissance" de la molette
+        smoothWheel: true,
+        smoothTouch: false,
+      });
+
+      // On utilise requestAnimationFrame pour l’animer en continu
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
   </body>
 </html>

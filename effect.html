@@ -2,75 +2,179 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Bouton Shine Hover Ajusté</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staggered Menu Mobile</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
-        background: #fff;
-        font-family: Arial, sans-serif;
+        font-family: "Montserrat", sans-serif;
+        background: #111;
+        overflow-x: hidden;
       }
 
-      .shine-button {
-        position: relative;
-        display: inline-block;
-        padding: 20px 50px;
-        font-size: 24px;
-        color: #fff;
-        background-color: #000;
-        border: none;
-        border-radius: 200px; /* très arrondi */
-        cursor: pointer;
-        overflow: hidden;
-        letter-spacing: 1px;
-        transition: all 0.3s ease; /* pour scale + translate et box-shadow */
-        box-shadow: none; /* shadow interne ajouté seulement au hover */
-      }
-
-      /* Gradient lumineux */
-      .shine-button::before {
-        content: "";
-        position: absolute;
+      /* Header */
+      header {
+        position: fixed;
         top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          120deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.5) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: skewX(-25deg);
-        transition: none;
+        left: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 50;
+        background: transparent;
       }
 
-      /* Effets au hover */
-      .shine-button:hover {
-        transform: translateY(-5px) scale(1.05); /* léger mouvement et agrandissement */
-        box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
-          /* top light plus fin */ inset 0 -4px 0 rgba(0, 0, 0, 0.5); /* bottom dark plus fin */
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
       }
 
-      /* Animation du gradient au hover */
-      .shine-button:hover::before {
-        animation: shine 0.5s forwards; /* plus rapide que 1s */
+      /* Burger */
+      .burger {
+        width: 35px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 60;
       }
 
-      @keyframes shine {
-        0% {
-          left: -100%;
-        }
-        100% {
-          left: 100%;
-        }
+      .burger span {
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        transition: 0.4s;
+      }
+
+      .burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .burger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Menu Panel */
+      .menu-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background: linear-gradient(135deg, #b19eef, #5227ff);
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        overflow-y: auto;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Menu Items */
+      .menu-panel ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .menu-panel li {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateX(50px);
+        position: relative;
+      }
+
+      .menu-panel li a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Numbering */
+      .menu-panel li::before {
+        content: counter(item);
+        counter-increment: item;
+        position: absolute;
+        left: -2rem;
+        top: 0;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.6);
       }
     </style>
   </head>
   <body>
-    <button class="shine-button">HOVER ME</button>
+    <header>
+      <div class="logo">Logo</div>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <div class="menu-panel" id="menuPanel">
+      <ul id="menuItems">
+        <li>Home</li>
+        <li>Club</li>
+        <li>Cours</li>
+        <li>Compétition</li>
+      </ul>
+    </div>
+
+    <script>
+      gsap.registerPlugin();
+
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("menuPanel");
+      const items = document.querySelectorAll("#menuItems li");
+
+      let open = false;
+
+      // initial counter
+      items.forEach((item, i) => (item.style.counterReset = `item ${i + 1}`));
+
+      burger.addEventListener("click", () => {
+        open = !open;
+        burger.classList.toggle("open");
+
+        if (open) {
+          gsap.to(menu, { right: 0, duration: 0.6, ease: "power4.out" });
+          gsap.to(items, {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power4.out",
+            stagger: 0.15,
+          });
+        } else {
+          gsap.to(items, {
+            x: 50,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power3.in",
+            stagger: 0.1,
+          });
+          gsap.to(menu, {
+            right: "-100%",
+            duration: 0.5,
+            delay: 0.2,
+            ease: "power3.in",
+          });
+        }
+      });
+    </script>
   </body>
 </html>
