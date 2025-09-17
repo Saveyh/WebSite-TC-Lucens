@@ -36,7 +36,7 @@
       data-website-id="b057c980-8bd9-4399-b89a-9565c15bb19a"
     ></script>
   </head>
-  <body>
+  <body class="fade">
     <header>
       <img
         id="outside-logo"
@@ -617,6 +617,26 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+    </script>
+
+    <!-- =================== Fade Animation -->
+    <script>
+      const body = document.body;
+      window.addEventListener("DOMContentLoaded", () => {
+        body.classList.add("show"); // fade in au chargement
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        if (link.hostname === window.location.hostname) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            body.classList.remove("show"); // fade out
+            setTimeout(() => {
+              window.location = link.href; // redirige après animation
+            }, 600); // durée identique au CSS
+          });
+        }
+      });
     </script>
   </body>
 </html>

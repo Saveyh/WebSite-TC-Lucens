@@ -69,3 +69,13 @@ button:focus {
 .black-button {
   transition: all 0.3s ease;
 }
+
+/* animations.css */
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+}
