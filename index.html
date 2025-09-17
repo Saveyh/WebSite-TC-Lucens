@@ -28,6 +28,13 @@
 
     <!-- Animations au scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Umami Analytics -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="b057c980-8bd9-4399-b89a-9565c15bb19a"
+    ></script>
   </head>
   <body>
     <header>
@@ -597,7 +604,7 @@
     <script>
       // Création du scroll smooth
       const lenis = new Lenis({
-        duration: 1, // plus la valeur est haute, plus c'est fluide/lent
+        duration: 0.7, // plus la valeur est haute, plus c'est fluide/lent
         easing: (t) => 1 - Math.pow(1 - t, 3), // easing cubic out très doux
         wheelMultiplier: 0.6, // ↓ réduit la "puissance" de la molette
         smoothWheel: true,
