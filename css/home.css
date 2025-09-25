@@ -119,8 +119,7 @@ nav #contact-nav {
 /* Hover Effects */
 #contact-nav:hover {
   transform: translateY(-3px) scale(1.05); /* légère montée et agrandissement */
-  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.3),
-    /* bordure interne top claire */ inset 0 -4px 0 rgba(0, 0, 0, 0.5); /* bordure interne bottom foncée */
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.5); /* bordure interne bottom foncée */
   background-color: #e9df29 !important;
   color: #2d2d2d !important;
   transition: all 0.3s ease;
@@ -634,7 +633,7 @@ h5 {
   margin-left: 2%;
 }
 
-.section4 #prices .price .top-price button {
+.section4 #prices .price .top-price a {
   box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
     4px 5px 14px 5px rgba(0, 0, 0, 0.25);
   display: flex;

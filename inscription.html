@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inscription - TC Lucens</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        background: white;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        background: #0073e6;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #005bb5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulaire d'Inscription</h1>
+      <form action="https://formspree.io/f/xvgwgwwg" method="POST">
+        <label for="sexe">Sexe :</label>
+        <select id="sexe" name="Sexe" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="Femme">Femme</option>
+          <option value="Homme">Homme</option>
+        </select>
+
+        <label for="nom">Nom, Prénom :</label>
+        <input type="text" id="nom" name="NomPrénom" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="Email" required />
+
+        <label for="adresse">Adresse :</label>
+        <textarea id="adresse" name="Adresse" rows="2" required></textarea>
+
+        <label for="tel">Téléphone :</label>
+        <input type="tel" id="tel" name="Téléphone" required />
+
+        <label for="naissance">Date de Naissance :</label>
+        <input type="date" id="naissance" name="DateNaissance" required />
+
+        <label for="cotisation">Type de Cotisation :</label>
+        <select id="cotisation" name="Cotisation" required>
+          <option value="">-- Choisissez --</option>
+          <option value="Junior">Adulte</option>
+          <option value="Adulte">Couple</option>
+          <option value="Famille">Etudiants</option>
+          <option value="Autre">Juniors</option>
+          <option value="Autre">Seniors</option>
+        </select>
+
+        <label for="facture">Regrouper la facture :</label>
+        <select id="facture" name="RegrouperFacture">
+          <option value="Non">Non</option>
+          <option value="Oui">Oui</option>
+        </select>
+
+        <label for="facture">Avec qui ?</label>
+        <input type="text" id="nom" name="NomPrénom" />
+
+        <label for="cours">Cours de tennis :</label>
+        <select id="cours" name="CoursTennis">
+          <option value="Oui">Oui !</option>
+          <option value="Non">Non...</option>
+        </select>
+
+        <!-- Champ caché pour indiquer le destinataire -->
+        <input type="hidden" name="_to" value="secretariat@tclucens.ch" />
+
+        <!-- Optionnel : redirection après envoi -->
+        <input
+          type="hidden"
+          name="_redirect"
+          value="https://tclucens.ch/merci.html"
+        />
+
+        <button type="submit">Envoyer l’inscription</button>
+      </form>
+    </div>
+  </body>
+</html>

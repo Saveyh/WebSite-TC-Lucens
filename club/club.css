@@ -1,9 +1,232 @@
 .hero h1 {
-  line-height: 132%;
+  line-height: 100%;
 }
 
 .hero h4 {
   line-height: 150%;
+  margin-top: 20px;
+}
+
+.landing {
+  border: 1px solid;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))
+    1;
+  border-radius: 50px;
+}
+
+/* ================= club-sec1 */
+
+.club-sec1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  scale: 1.2;
+}
+
+.club-sec1 h4 {
+  font-size: 24px;
+  letter-spacing: -0.005em;
+  font-weight: 300;
+}
+
+.club-sec1 .sec1-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 60px 0 60px 0;
+}
+
+.club-sec1 .sec1-content #barre {
+  height: 98%;
+  width: 12px;
+  background-color: #d9d9d9;
+  border-radius: 100px;
+}
+
+.club-sec1 .sec1-content #texte-contenu {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.club-sec1 .sec1-content .texte-surface h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.club-sec1 .sec1-content .texte-surface p {
+  line-height: 150%;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.club-sec1 #en-savoir-plus {
+  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  height: 40px;
+  width: 230px;
+  letter-spacing: 0.01em;
+  background-color: var(--noir);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--Montserrat);
+}
+
+/* ================= club-sec2 */
+
+.club-sec2 {
+  margin-top: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-sec2 h5 {
+  width: 320px;
+}
+
+.club-sec2 img {
+  margin-top: 50px;
+}
+
+/* ================= club-sec3 */
+
+.club-sec3 {
+  margin-top: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-sec3 h5 {
+  width: 320px;
+}
+
+.club-sec3 #big-box {
+  width: 1800px;
+  height: 600px;
+  border: solid rgba(0, 0, 0, 0.2) 3px;
+  border-radius: 30px;
+  margin-top: 60px;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.club-sec3 #big-box #left-box {
+  flex: 1;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.club-sec3 #big-box #left-box div {
+  flex: 1;
+  max-height: 144px;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 50px;
+}
+
+.club-sec3 #big-box #left-box div h6 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.club-sec3 #big-box #left-box div p {
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.club-sec3 #big-box #right-box {
+  flex: 1;
+  height: 500px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 15px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.club-sec3 #big-box #right-box .sous-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.club-sec3 #big-box #right-box .sous-box:hover .right-sous-box p:first-of-type {
+  color: black;
+}
+
+.club-sec3 #big-box #right-box .left-sous-box h6 {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.club-sec3 #big-box #right-box .right-sous-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.club-sec3 #big-box #right-box .right-sous-box p:first-of-type {
+  font-size: 64px;
+  font-weight: 600;
+  font-style: italic;
+  margin-right: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.club-sec3 #sech4 {
+  margin-top: 70px;
+}
+
+.club-sec3 #form-inscription {
+  box-shadow: inset 5px 6px 30px rgba(255, 255, 255, 0.25),
+    4px 5px 14px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
+  height: 80px;
+  width: 440px;
+  letter-spacing: 0.01em;
+  background-color: var(--noir);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--Montserrat);
+  margin-top: 50px;
 }
 
 @media (max-width: 500px) {
