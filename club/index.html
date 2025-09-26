@@ -197,19 +197,20 @@
         </h4>
         <div id="big-box">
           <div id="left-box">
-            <div>
+            <div class="categorie active" data-type="habitants">
               <h6>Habitants</h6>
               <p>de Lucens</p>
             </div>
-            <div>
+            <div class="categorie" data-type="nonresidents">
               <h6>Non-résidents</h6>
               <p>Hors Lucens</p>
             </div>
-            <div>
+            <div class="categorie" data-type="soutien">
               <h6>Soutien</h6>
               <p>Membres passifs</p>
             </div>
           </div>
+
           <div id="right-box">
             <div class="sous-box">
               <div class="left-sous-box">
@@ -217,51 +218,104 @@
                 <p>Membres Actifs</p>
               </div>
               <div class="right-sous-box">
-                <p>150.-</p>
+                <p class="prix" data-type="adultes">150.-</p>
                 <p>/ an</p>
               </div>
             </div>
+
             <div class="sous-box">
               <div class="left-sous-box">
                 <h6>Couples</h6>
                 <p>En amoureux</p>
               </div>
               <div class="right-sous-box">
-                <p>270.-</p>
+                <p class="prix" data-type="couples">270.-</p>
                 <p>/ an</p>
               </div>
             </div>
+
             <div class="sous-box">
               <div class="left-sous-box">
                 <h6>Étudiants</h6>
                 <p>16 ans et +</p>
               </div>
               <div class="right-sous-box">
-                <p>70.-</p>
+                <p class="prix" data-type="etudiants">70.-</p>
                 <p>/ an</p>
               </div>
             </div>
+
             <div class="sous-box">
               <div class="left-sous-box">
                 <h6>Juniors</h6>
                 <p>jusqu'a 16 ans</p>
               </div>
               <div class="right-sous-box">
-                <p>40.-</p>
+                <p class="prix" data-type="juniors">40.-</p>
                 <p>/ an</p>
               </div>
             </div>
+
             <div class="sous-box">
               <div class="left-sous-box">
                 <h6>Seniors</h6>
                 <p>60 ans et +</p>
               </div>
               <div class="right-sous-box">
-                <p>110.-</p>
+                <p class="prix" data-type="seniors">110.-</p>
                 <p>/ an</p>
               </div>
             </div>
           </div>
+
+          <script>
+            // Différentes grilles de prix
+            const tarifs = {
+              habitants: {
+                adultes: "150.-",
+                couples: "270.-",
+                etudiants: "70.-",
+                juniors: "40.-",
+                seniors: "110.-",
+              },
+              nonresidents: {
+                adultes: "190.-",
+                couples: "350.-",
+                etudiants: "90.-",
+                juniors: "60.-",
+                seniors: "150.-",
+              },
+              soutien: {
+                adultes: "30.-",
+                couples: "30.-",
+                etudiants: "30.-",
+                juniors: "30.-",
+                seniors: "30.-",
+              },
+            };
+
+            // Ajout d’événement sur les catégories
+            document.querySelectorAll(".categorie").forEach((cat) => {
+              cat.addEventListener("click", () => {
+                // Retirer l'état actif des autres
+                document
+                  .querySelectorAll(".categorie")
+                  .forEach((c) => c.classList.remove("active"));
+
+                // Ajouter l'état actif à celui cliqué
+                cat.classList.add("active");
+
+                // Récupérer le type sélectionné
+                const type = cat.getAttribute("data-type");
+                const prixElements = document.querySelectorAll(".prix");
+
+                prixElements.forEach((el) => {
+                  const membre = el.getAttribute("data-type");
+                  el.textContent = tarifs[type][membre];
+                });
+              });
+            });
+          </script>
         </div>
         <h4 id="sech4">
           Le meilleur moment c'était il y a 10 ans... <br />

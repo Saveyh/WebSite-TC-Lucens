@@ -141,6 +141,21 @@
   gap: 30px;
 }
 
+.categorie {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.categorie:hover {
+  background: #f0f0f0;
+}
+
+.categorie.active {
+  background: #e9df2930;
+}
+
 .club-sec3 #big-box #left-box div {
   flex: 1;
   max-height: 144px;
